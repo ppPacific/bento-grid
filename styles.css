@@ -1,0 +1,189 @@
+/* || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+
+:root {
+    --bg-color: hsl(47, 88%, 63%);
+    --wh: hsl(0, 0%, 100%);
+    --bl: hsl(0, 0%, 7%);
+    --pr500: hsl(256, 67%, 59%);
+    --pr100: hsl(254, 88%, 90%);
+    --yl500: hsl(39, 100%, 71%);
+    --yl100: hsl(31, 66%, 93%);
+
+    --font-xl: 3.8rem;
+    --font-x: 0.8rem;
+}
+@font-face {
+    font-display: swap;
+    font-family: "DMSans-M";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./assets/fonts/static/DMSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "DMSans-MI";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./assets/fonts/static/DMSans-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+    font-display: swap;
+    font-family: "DMSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/static/DMSans-Regular.ttf") format("truetype");
+}
+.try-bg{
+    background-color: var(--bg-color);
+    /*border-radius: 1em;*/
+}
+body{
+    font-family: "DMSans",sans-serif;
+}
+.parent-container {
+    max-width: 100%;
+    display: flex; /* Enables Flexbox layout */
+    justify-content: center; /* Centers horizontally along the main axis */
+    align-items: center; /* Centers vertically along the cross axis */
+    height: 100vh; /* Example: Ensures parent takes full viewport height */
+}
+.card-col{
+    display: flex;
+    flex-direction: column;
+    /*gap: 0.6rem;*/
+}
+.card-col-center{
+    justify-content: center;
+    align-items: center;
+}
+.title-font{
+    font-size: var(--font-xl);
+    text-align: center;
+}
+.sub-font{
+    font-size: var(--font-x);
+}
+.yl-font{
+    color: var(--yl500);
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.main div {
+    border-radius: 0.6em;
+}
+.left {
+    grid-area: left;
+}
+.right {
+    grid-area: right;
+}
+.leftb {
+    grid-area: leftb;
+}
+.middlel {
+    grid-area: middlel;
+}
+.middler {
+    background-color: var(--yl500);
+    display: flex;
+    padding: 1rem;
+}
+.middleb {
+    grid-area: middleb;
+}
+.header {
+    background-color: var(--pr500);
+    display: flex;
+    padding: 1.6rem;
+    color: white;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+.middlerb {
+
+    background-color: var(--pr500);
+}
+
+/* Desktop: Switch to Grid layout at 768px and above */
+@media (min-width: 768px) {
+    .main {
+        max-width: 1280px;
+        display: grid;
+        gap: 1rem;
+        /*padding: 1em;*/
+        grid-template-columns: 320px 320px 320px 320px;
+        grid-template-areas:
+                "left header header right"
+                "left header header right"
+                "left middlel middler right"
+                "leftb middlel middler right"
+                "leftb middleb middlerb middlerb"
+                "leftb middleb middlerb middlerb"
+    }
+    .left {
+        grid-area: left;
+    }
+    .right {
+        grid-area: right;
+    }
+    .leftb {
+        grid-area: leftb;
+    }
+    .middlel {
+        grid-area: middlel;
+    }
+    .middler {
+        grid-area: middler;
+    }
+    .middleb {
+        grid-area: middleb;
+    }
+    .header {
+        grid-area: header;
+
+    }
+    .middlerb {
+        grid-area: middlerb;
+        background-color: var(--pr500);
+    }
+}
